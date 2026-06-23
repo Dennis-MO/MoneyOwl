@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 * {
   box-sizing: border-box;
@@ -19,6 +19,7 @@ body {
 }
 
 .shimmer-bg {
+  background: linear-gradient(135deg, #09001a 0%, #1e0040 20%, #3b0f8c 45%, #6d1fa0 65%, #1a0535 85%, #09001a 100%);
   background-size: 300% 300%;
   animation: shimmer-bg 8s ease-in-out infinite;
 }

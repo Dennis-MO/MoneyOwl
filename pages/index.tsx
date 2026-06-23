@@ -13,7 +13,6 @@ export default function Home() {
 
       <main
         className="shimmer-bg min-h-screen flex items-center justify-center p-6 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #09001a 0%, #1e0040 20%, #3b0f8c 45%, #6d1fa0 65%, #1a0535 85%, #09001a 100%)" }}
       >
         {/* Decorative orbs */}
         <div className="orb-a absolute top-[-80px] left-[-80px] w-80 h-80 rounded-full blur-3xl pointer-events-none" style={{ background: "#7c3aed" }} />
