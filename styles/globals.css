@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+@keyframes shimmer-bg {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.shimmer-bg {
+  background-size: 300% 300%;
+  animation: shimmer-bg 8s ease-in-out infinite;
+}
+
+@keyframes orb-pulse {
+  0%, 100% { transform: scale(1);    opacity: 0.18; }
+  50%       { transform: scale(1.2); opacity: 0.28; }
+}
+
+.orb-a { animation: orb-pulse 7s ease-in-out infinite; }
+.orb-b { animation: orb-pulse 9s ease-in-out infinite reverse; }
