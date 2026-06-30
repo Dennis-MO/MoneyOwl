@@ -9,7 +9,7 @@ module.exports = {
       colors: {
         teal: {
           dark: "#49d367",
-          DEFAULT: "#2d7d6e",
+          brand: "#2d7d6e",
           light: "#e8f4f1",
         },
       },

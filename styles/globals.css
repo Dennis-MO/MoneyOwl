@@ -31,3 +31,9 @@ body {
 
 .orb-a { animation: orb-pulse 7s ease-in-out infinite; }
 .orb-b { animation: orb-pulse 9s ease-in-out infinite reverse; }
+
+
+:root {
+  --color-brand: #2d7d6e;
+  --color-brand-light: #5cb8ab;
+}
