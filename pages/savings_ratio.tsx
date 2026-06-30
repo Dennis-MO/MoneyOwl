@@ -87,6 +87,7 @@ export default function Step1() {
                 min={0}
                 hideControls
                 thousandSeparator=","
+                inputMode="numeric"
                 styles={{
                   label: { fontWeight: 700, color: "#008970", fontSize:14},
                   input: { border: "1.5px solid #5cb8ab", background: "rgba(92,184,171,0.08)",fontSize:16 },
@@ -102,6 +103,7 @@ export default function Step1() {
                 min={0}
                 hideControls
                 thousandSeparator=","
+                inputMode="numeric"
                 styles={{
                   label: { fontWeight: 700, color: "#008970",fontSize:14 },
                   input: { border: "1.5px solid #5cb8ab", background: "rgba(255,255,255,0.7)",fontSize:16 },
