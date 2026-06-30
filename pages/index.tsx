@@ -44,7 +44,7 @@ export default function Home() {
   />
   <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
     <span className="font-extrabold text-xl text-white whitespace-nowrap">Tools &amp; Calculators</span>
-    <span className="font-medium text-xs text-white">Explore our free tools to plan your savings, insurance/investments and property.</span>
+    <span className="font-medium text-xs text-white whitespace-nowrap">Explore our free tools to plan your savings, insurance/investments and property.</span>
   </div>
 </div>
 
