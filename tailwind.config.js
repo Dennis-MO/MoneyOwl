@@ -14,7 +14,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["Mulish", "sans-serif"],
       },
     },
   },

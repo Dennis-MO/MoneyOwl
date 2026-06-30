@@ -3,8 +3,8 @@ import { createContext, useContext, useState } from "react";
 const FormContext = createContext({
   income: "1000",
   expenses: "2000",
-  setIncome: (v: string) => {},
-  setExpenses: (v: string) => {},
+  setIncome: (value: string) => {},
+  setExpenses: (value: string) => {},
 });
 
 export function FormProvider({ children }: { children: React.ReactNode }) {

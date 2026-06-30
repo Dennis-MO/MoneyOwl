@@ -1,21 +1,34 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
-import { useForm } from "../context/FormContext";
+import { useRouter } from "next/router";
+import { Title, ActionIcon, Grid, Text } from "@mantine/core";
+import { MdArrowBack } from "react-icons/md";
+
 
 export default function Step1() {
-  const { income, expenses, setIncome, setExpenses } = useForm();
+  const router = useRouter();
+  const [income, setIncome] = useState("");
+  const [expenses, setExpenses] = useState("");
   const [result, setResult] = useState<{ savings: number; ratio: number } | null>(null);
 
-  async function handleCalculate() {
-    const response = await fetch("/api/calculate", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ income, expenses }),
-    });
-    const data = await response.json();
-    setResult(data);
+
+  function handleCalculate() {
+  const inc = parseFloat(income);
+  const exp = parseFloat(expenses);
+  if (isNaN(inc) || isNaN(exp) || inc <= 0) return;
+  const savings = inc - exp;
+  const ratio = (savings / inc) * 100;
+  setResult({ savings, ratio });
   }
+
+  const actionIconProps = {
+    size: 40,
+    variant: "filled" as const,  
+    color: "#008970", 
+    radius: "xl" as const,  
+    className: "ml-3",
+};
 
   return (
     <>
@@ -25,7 +38,21 @@ export default function Step1() {
         <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦉</text></svg>" />
       </Head>
 
-      <main className="min-h-screen flex items-center justify-center p-6 bg-white">
+      
+      <main className="min-h-screen flex flex-col items-center justify-start p-6 bg-white">
+       
+        <Grid className="w-full max-w-3xl mb-10" align="center">
+          <Grid.Col span={4}>
+            <ActionIcon {...actionIconProps} onClick={() => router.push("/")} aria-label="Go back">
+  <MdArrowBack size={24} />
+</ActionIcon>
+          </Grid.Col>
+          <Grid.Col span={4}>
+            <Title size="h2" ta="center">Savings Ratio</Title>
+            <Text size="sm" fw={500} mt={10}>Default text</Text>
+          </Grid.Col>
+          <Grid.Col span={4} />
+        </Grid>
 
         {/* Card */}
         <div
@@ -38,6 +65,7 @@ export default function Step1() {
           }}
         >
           <div className="flex flex-col md:flex-row">
+            
 
             {/* Left column */}
             <div className="flex-1 p-10 flex flex-col justify-center gap-6">
