@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { MdArrowForward } from "react-icons/md";
-import { Button ,ActionIcon } from "@mantine/core";
+import { Button, ActionIcon, SimpleGrid } from "@mantine/core";
 
 export default function Home() {
 
@@ -55,7 +55,7 @@ export default function Home() {
         className="min-h-screen bg-teal-50 flex items-start justify-center p-6 relative overflow-hidden w-full"
 >
           
-          <div className="flex flex-row gap-4 w-full max-w-4xl justify-center">
+          <SimpleGrid cols={{ base: 1, md: 3 }} spacing="md" className="w-full max-w-4xl">
 
             {/*First Card*/}
             <div className={cardClass}>
@@ -146,7 +146,7 @@ export default function Home() {
                   </div>
                   </div>
 
-          </div>    
+          </SimpleGrid>
       </main>
     </>
   );

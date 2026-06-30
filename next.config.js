@@ -5,6 +5,7 @@ const nextConfig = {
   images: {
     domains: ["www.moneyowl.com.sg"],
   },
+  transpilePackages: ["@mantine/charts", "recharts"],
 };
 
 module.exports = nextConfig;
